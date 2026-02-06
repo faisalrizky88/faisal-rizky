@@ -8,132 +8,148 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
-  background:linear-gradient(180deg,#0f2027,#000);
-  color:#eee;
+background:linear-gradient(180deg,#0f2027,#000);
+color:#eee;
 }
-
+#overlay{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+font-size:1.4rem;
+color:#4dd0a6;
+cursor:pointer;
+}
 .container{
-  max-width:720px;
-  margin:auto;
-  padding:40px 20px;
+max-width:720px;
+margin:auto;
+padding:40px 20px;
+animation:fade 1s ease;
 }
-
-header{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-header h1{
-  font-size:2.4rem;
-}
-
-header p{
-  color:#aaa;
-  margin-top:6px;
-}
-
-section{
-  margin-bottom:40px;
-}
-
-h2{
-  color:#4dd0a6;
-  margin-bottom:12px;
-}
-
-p{
-  line-height:1.8;
-  margin-bottom:12px;
-}
-
+header{text-align:center;margin-bottom:40px}
+header h1{font-size:2.3rem}
+header p{color:#aaa;margin-top:6px}
+section{margin-bottom:40px}
+h2{color:#4dd0a6;margin-bottom:14px}
+p{margin-bottom:12px;line-height:1.8}
 .links a{
-  display:block;
-  margin-bottom:12px;
-  padding:12px;
-  text-align:center;
-  background:#4dd0a6;
-  color:#000;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:600;
+display:block;
+background:#4dd0a6;
+color:#000;
+text-decoration:none;
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
+text-align:center;
+font-weight:500;
+}
+.links a:hover{background:#3cbf96}
+footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
+
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#4dd0a6;
+border:none;
+border-radius:25px;
+padding:10px 16px;
+font-weight:600;
+cursor:pointer;
+display:none;
 }
 
-footer{
-  text-align:center;
-  color:#777;
-  font-size:.9rem;
-  margin-top:60px;
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
 
 <body>
 
+<!-- TAP SCREEN -->
+<div id="overlay">Tap untuk masuk</div>
+
 <div class="container">
 
 <header>
-  <h1>Faisal Rizky</h1>
-  <p>Hanya gabut</p>
+<h1>Faisal Rizky</h1>
+<p>Hanya gabut</p>
 </header>
 
 <section>
-  <h2>Tentang Saya</h2>
-  <p>
-    Halo, saya Faisal Rizky. Saya menjalani hidup dengan cara sederhana,
-    menikmati proses, dan tidak terlalu memaksa arah hidup.
-  </p>
-  <p>
-    Website ini adalah ruang pribadi saya. Tempat singgah dan berbagi,
-    tanpa banyak basa-basi.
-  </p>
+<h2>Tentang Saya</h2>
+<p>
+Halo, saya Faisal Rizky. Saya menjalani hidup dengan cara sederhana,
+menikmati proses, dan tidak terlalu memaksa arah hidup.
+</p>
+<p>
+Website ini saya buat sebagai ruang pribadi.
+Tempat singgah, berbagi, dan sekadar meninggalkan jejak kecil.
+</p>
 </section>
 
 <section>
-  <h2>Kontak & Sosial</h2>
-  <div class="links">
-    <a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
-    <a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
-  </div>
+<h2>Kontak & Sosial</h2>
+<div class="links">
+<a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
+<a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
+</div>
 </section>
 
 <section>
-  <h2>Dukungan</h2>
-  <p>
-    Kalau berkenan memberi dukungan atau sekadar traktir kopi,
-    bisa langsung lewat Saweria 🙏
-  </p>
-  <div class="links">
-    <a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
-  </div>
+<h2>Dukungan</h2>
+<p>
+Jika kamu ingin memberi dukungan atau sekadar traktir kopi,
+kamu bisa langsung lewat Saweria.
+Terima kasih sudah mampir 🙏
+</p>
+<div class="links">
+<a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
+</div>
 </section>
 
 <footer>
-  © 2026 Faisal Rizky
+© 2026 Faisal Rizky
 </footer>
 
 </div>
 
 <!-- MUSIK -->
 <audio id="bgm" loop>
-  <source src="musik.mp3" type="audio/mpeg">
+<source src="musik.mp3" type="audio/mpeg">
 </audio>
 
+<button id="musicBtn" onclick="toggleMusic()">⏸ Musik</button>
+
 <script>
-document.addEventListener("click", function(){
-  const musik = document.getElementById("bgm");
-  if(musik.paused){
-    musik.play();
-  }
-}, { once:true });
+const musik = document.getElementById("bgm");
+const overlay = document.getElementById("overlay");
+const btn = document.getElementById("musicBtn");
+
+overlay.onclick = function(){
+musik.play();
+overlay.style.display="none";
+btn.style.display="block";
+}
+
+function toggleMusic(){
+if(musik.paused){
+musik.play();
+btn.innerText="⏸ Musik";
+}else{
+musik.pause();
+btn.innerText="▶ Musik";
+}
+}
 </script>
 
 </body>
-  </html>
+</html>
