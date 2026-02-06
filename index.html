@@ -9,10 +9,21 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
 body{
-  background:linear-gradient(180deg,#0f2027,#000);
+  height:100%;
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
+  background-size: 400% 400%;
   color:#eee;
+  animation: gradientBG 20s ease infinite;
 }
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 .container{
   max-width:720px;
   margin:auto;
@@ -20,9 +31,9 @@ body{
   animation:fade 1s ease;
 }
 header{text-align:center;margin-bottom:40px}
-header h1{font-size:2.3rem}
-header p{color:#aaa;margin-top:6px}
-section{margin-bottom:40px}
+header h1{font-size:2.3rem;animation:fadeDown 1s ease;}
+header p{color:#aaa;margin-top:6px;animation:fadeDown 1.2s ease;}
+section{margin-bottom:40px;animation:fadeUp 1s ease;}
 h2{color:#4dd0a6;margin-bottom:14px}
 p{margin-bottom:12px;line-height:1.8}
 .links a{
@@ -35,10 +46,12 @@ border-radius:8px;
 margin-bottom:10px;
 text-align:center;
 font-weight:500;
+transition:0.3s;
 }
 .links a:hover{background:#3cbf96}
 footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 
+/* tombol musik */
 #musicBtn{
 position:fixed;
 bottom:20px;
@@ -54,9 +67,28 @@ justify-content:center;
 align-items:center;
 box-shadow:0 0 10px rgba(0,0,0,0.5);
 z-index:1000;
+transition:0.3s;
+}
+#musicBtn.active{
+  animation: pulse 1s infinite;
 }
 
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* fade animasi teks */
 @keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-20px)}
+to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp{
 from{opacity:0;transform:translateY(20px)}
 to{opacity:1;transform:translateY(0)}
 }
@@ -123,21 +155,33 @@ Terima kasih sudah mampir 🙏
 <button id="musicBtn" onclick="toggleMusic()">▶ Musik</button>
 
 <script>
-const musik = document.getElementById("bgm");
+const audio = document.getElementById("bgm");
 const btn = document.getElementById("musicBtn");
-
-// tombol musik langsung terlihat
-btn.style.display="flex";
+let isPlaying = false;
 
 function toggleMusic(){
-if(musik.paused){
-  musik.play().catch(()=>{});
-  btn.innerText="⏸ Musik";
-}else{
-  musik.pause();
-  btn.innerText="▶ Musik";
+  if(isPlaying){
+    audio.pause();
+    btn.innerText="▶ Musik";
+    btn.classList.remove("active");
+    isPlaying=false;
+  } else {
+    audio.play().catch(()=>{});
+    btn.innerText="⏸ Musik";
+    btn.classList.add("active");
+    isPlaying=true;
+  }
 }
-}
+
+// opsional: mainkan musik setelah 1 klik natural di halaman
+document.addEventListener("click", function(){
+  if(!isPlaying){
+    audio.play().catch(()=>{});
+    btn.innerText="⏸ Musik";
+    btn.classList.add("active");
+    isPlaying=true;
+  }
+}, { once:true });
 </script>
 
 </body>
