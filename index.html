@@ -5,117 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Faisal Rizky</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      background: radial-gradient(circle at top, #0f2027, #000);
       color: #eee;
+      line-height: 1.8;
     }
 
     .container {
       max-width: 720px;
       margin: auto;
       padding: 40px 20px;
-      animation: fadeIn 1.2s ease;
+      animation: fade 1s ease;
     }
 
-    .profile {
+    header {
       text-align: center;
+      margin-bottom: 50px;
     }
 
-    .profile img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00ffd5;
-      box-shadow: 0 0 20px rgba(0,255,213,0.5);
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
     }
 
-    h1 {
-      margin: 15px 0 5px;
-      font-size: 32px;
-    }
-
-    .tagline {
-      font-size: 14px;
+    header p {
       color: #aaa;
+      margin-top: 8px;
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #00ffd5, transparent);
-      margin: 35px 0;
+    section {
+      margin-bottom: 50px;
     }
 
-    h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.7;
-      color: #ccc;
-      margin-bottom: 15px;
-    }
-
-    .support {
-      text-align: center;
-    }
-
-    .btn-saweria {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
-      background: #00ffd5;
-      color: #000;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      box-shadow: 0 0 18px rgba(0,255,213,0.6);
-      transition: 0.2s;
-    }
-
-    .btn-saweria:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0,255,213,0.9);
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #4dd0a6;
     }
 
     footer {
       text-align: center;
-      margin-top: 20px;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 60px;
     }
 
-    footer a {
-      color: #00ffd5;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .music-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #00ffd5;
-      color: #000;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,255,213,0.6);
-    }
-
-    @keyframes fadeIn {
+    @keyframes fade {
       from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -124,93 +73,39 @@
     }
   </style>
 </head>
-
 <body>
 
   <div class="container">
 
-    <!-- PROFIL -->
-    <div class="profile">
-      <img src="foto-saya.jpg" alt="Faisal Rizky">
+    <header>
       <h1>Faisal Rizky</h1>
-      <p class="tagline">Hanya gabut</p>
-    </div>
+      <p>Catatan hidup sederhana</p>
+    </header>
 
-    <div class="divider"></div>
-
-    <!-- TENTANG SAYA -->
     <section>
       <h2>Tentang Saya</h2>
       <p>
         Halo, saya Faisal Rizky. Saya orang biasa yang menjalani hidup dengan cara sederhana.
         Nggak selalu punya rencana besar, tapi selalu berusaha jalanin hari dengan tenang dan apa adanya.
       </p>
-
+      <br>
       <p>
         Keseharian saya diisi dengan hal-hal kecil — ngopi, mikir kerja seadanya,
-        dan menikmati waktu luang. Hidup buat saya bukan soal siapa yang paling cepat
-        atau paling sukses, tapi siapa yang bisa tetap waras dan bersyukur di setiap prosesnya.
+        dan menikmati waktu luang. Hidup buat saya bukan soal siapa paling cepat,
+        tapi siapa yang bisa tetap waras dan bersyukur di setiap prosesnya.
       </p>
-
+      <br>
       <p>
-        Website ini saya buat sebagai ruang pribadi.
-        Tempat berbagi, menaruh jejak, dan sekadar pengingat
-        kalau hidup nggak harus selalu serius.
-        Kadang gabut itu perlu.
+        Website ini saya buat sebagai ruang pribadi. Tempat berbagi, ninggalin jejak,
+        dan pengingat kalau hidup nggak harus selalu serius. Kadang gabut itu perlu.
       </p>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- SUPPORT -->
-    <section class="support">
-      <h2>Support</h2>
-      <p>
-        Kalau kamu merasa terhibur atau ingin memberi dukungan,
-        kamu bisa support saya lewat Saweria.
-        Nggak ada kewajiban sama sekali —
-        sekecil apa pun sangat berarti 🙏
-      </p>
-
-      <a class="btn-saweria" href="https://saweria.co/faisalngopi" target="_blank">
-        ☕ Support via Saweria
-      </a>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- SOSIAL -->
     <footer>
-      <a href="https://instagram.com/juragan_empang_88" target="_blank">
-        📷 Instagram
-      </a>
+      © 2026 Faisal Rizky
     </footer>
 
   </div>
-
-  <!-- MUSIK (OPSIONAL) -->
-  <audio id="bg-music" loop>
-    <source src="musik.mp3" type="audio/mpeg">
-  </audio>
-
-  <button class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
-
-  <script>
-    const music = document.getElementById("bg-music");
-    let isPlaying = false;
-
-    function toggleMusic() {
-      if (!isPlaying) {
-        music.play();
-        isPlaying = true;
-        document.querySelector(".music-btn").innerText = "⏸️ Pause Musik";
-      } else {
-        music.pause();
-        isPlaying = false;
-        document.querySelector(".music-btn").innerText = "🎵 Putar Musik";
-      }
-    }
-  </script>
 
 </body>
 </html>
