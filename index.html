@@ -5,134 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faisal Rizky</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  background:linear-gradient(180deg,#0f2027,#000);
-  color:#eee;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-.container{
-  max-width:720px;
-  margin:auto;
-  padding:40px 20px;
+.overlay {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-header{
-  text-align:center;
-  margin-bottom:40px;
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 35px rgba(0,0,0,.4);
 }
 
-header h1{
-  font-size:2.4rem;
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
 }
 
-header p{
-  color:#aaa;
-  margin-top:6px;
+h1 {
+  margin: 15px 0 5px;
+  font-size: 24px;
 }
 
-section{
-  margin-bottom:40px;
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
 }
 
-h2{
-  color:#4dd0a6;
-  margin-bottom:12px;
+.about {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
-p{
-  line-height:1.8;
-  margin-bottom:12px;
+.btn {
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  background: #00c6ff;
 }
 
-.links a{
-  display:block;
-  margin-bottom:12px;
-  padding:12px;
-  text-align:center;
-  background:#4dd0a6;
-  color:#000;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:600;
+.btn:hover {
+  opacity: 0.85;
 }
 
-footer{
-  text-align:center;
-  color:#777;
-  font-size:.9rem;
-  margin-top:60px;
+.donate {
+  margin-top: 15px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.tap {
+  margin-top: 15px;
+  font-size: 12px;
+  opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="overlay" id="tapArea">
+  <div class="card">
 
-<header>
-  <h1>Faisal Rizky</h1>
-  <p>Hanya gabut</p>
-</header>
+    <div class="profile">
+      <img src="foto.jpg" alt="Faisal Rizky">
+    </div>
 
-<section>
-  <h2>Tentang Saya</h2>
-  <p>
-    Halo, saya Faisal Rizky. Saya menjalani hidup dengan cara sederhana,
-    menikmati proses, dan tidak terlalu memaksa arah hidup.
-  </p>
-  <p>
-    Website ini adalah ruang pribadi saya. Tempat singgah dan berbagi,
-    tanpa banyak basa-basi.
-  </p>
-</section>
+    <h1>Faisal Rizky</h1>
+    <div class="subtitle">Hanya Gabut ✨</div>
 
-<section>
-  <h2>Kontak & Sosial</h2>
-  <div class="links">
-    <a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
-    <a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
+    <div class="about">
+      Saya hanyalah orang biasa yang menjalani hidup dengan sederhana.
+      Kadang capek, kadang senyum, kadang cuma bisa ngopi sambil mikir masa depan.
+      Website ini cuma tempat kecil buat ninggalin jejak,
+      siapa tau suatu hari bisa jadi cerita.
+    </div>
+
+    <a class="btn" href="https://instagram.com/juragan_empang_88" target="_blank">
+      Instagram
+    </a>
+
+    <a class="btn" href="https://wa.me/6288297054465" target="_blank">
+      WhatsApp
+    </a>
+
+    <a class="btn" href="https://saweria.co/faisalngopi" target="_blank">
+      Donasi via Saweria
+    </a>
+
+    <div class="donate">
+      Jika berkenan mendukung atau sekadar traktir kopi,
+      bisa langsung melalui Saweria 🙏
+    </div>
+
+    <div class="tap">
+      👆 Tap di mana saja untuk memulai musik
+    </div>
+
   </div>
-</section>
-
-<section>
-  <h2>Dukungan</h2>
-  <p>
-    Kalau berkenan memberi dukungan atau sekadar traktir kopi,
-    bisa langsung lewat Saweria 🙏
-  </p>
-  <div class="links">
-    <a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Faisal Rizky
-</footer>
-
 </div>
 
-<!-- MUSIK -->
-<audio id="bgm" loop>
+<audio id="musik" loop>
   <source src="musik.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-document.addEventListener("click", function(){
-  const musik = document.getElementById("bgm");
-  if(musik.paused){
-    musik.play();
-  }
-}, { once:true });
+const audio = document.getElementById("musik");
+document.getElementById("tapArea").addEventListener("click", function () {
+  audio.play().catch(() => {});
+});
 </script>
 
 </body>
