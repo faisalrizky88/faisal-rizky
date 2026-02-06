@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faisal Rizky</title>
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
+/* Background Gradient Animasi */
 body{
   height:100%;
   background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
@@ -37,21 +42,24 @@ section{margin-bottom:40px;animation:fadeUp 1s ease;}
 h2{color:#4dd0a6;margin-bottom:14px}
 p{margin-bottom:12px;line-height:1.8}
 .links a{
-display:block;
+display:flex;
+align-items:center;
 background:#4dd0a6;
 color:#000;
 text-decoration:none;
 padding:12px;
 border-radius:8px;
 margin-bottom:10px;
-text-align:center;
 font-weight:500;
 transition:0.3s;
 }
+.links a i{
+  margin-right:8px;
+  font-size:1.2rem;
+}
 .links a:hover{background:#3cbf96}
-footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 
-/* tombol musik */
+/* Tombol musik */
 #musicBtn{
 position:fixed;
 bottom:20px;
@@ -79,19 +87,12 @@ transition:0.3s;
   100%{transform:scale(1);}
 }
 
-/* fade animasi teks */
-@keyframes fade{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
-}
-@keyframes fadeDown{
-from{opacity:0;transform:translateY(-20px)}
-to{opacity:1;transform:translateY(0)}
-}
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
-}
+/* Fade animasi teks */
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 </style>
 </head>
 
@@ -124,8 +125,9 @@ Website ini juga sebagai pengingat bahwa setiap orang punya prosesnya masing-mas
 <section>
 <h2>Kontak & Sosial</h2>
 <div class="links">
-<a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
-<a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
+<a href="https://wa.me/6288297054465" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+<a href="https://instagram.com/juragan_empang_88" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+<a href="https://saweria.co/faisalngopi" target="_blank"><i class="fa-solid fa-mug-hot"></i>Donasi via Saweria</a>
 </div>
 </section>
 
@@ -136,9 +138,6 @@ Jika kamu ingin memberi dukungan atau sekadar traktir kopi,
 kamu bisa langsung lewat Saweria.
 Terima kasih sudah mampir 🙏
 </p>
-<div class="links">
-<a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
-</div>
 </section>
 
 <footer>
