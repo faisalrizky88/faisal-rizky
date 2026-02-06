@@ -17,25 +17,6 @@ body{
   color:#fff;
 }
 
-/* layar tap */
-#tapScreen{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:9999;
-  cursor:pointer;
-}
-
-#tapScreen h2{
-  margin-bottom:10px;
-}
-
 .container{
   min-height:100vh;
   display:flex;
@@ -48,16 +29,16 @@ body{
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(8px);
   border-radius:22px;
-  padding:25px;
-  max-width:420px;
+  padding:30px 25px;
+  max-width:500px;
   width:100%;
   text-align:center;
   box-shadow:0 0 35px rgba(0,0,0,0.45);
 }
 
 .profile img{
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   border-radius:50%;
   border:3px solid #fff;
   object-fit:cover;
@@ -65,30 +46,32 @@ body{
 
 h1{
   margin:15px 0 5px;
+  font-size:28px;
 }
 
 .sub{
-  font-size:14px;
+  font-size:15px;
   opacity:0.85;
 }
 
 .about{
   text-align:left;
-  font-size:14px;
+  font-size:15px;
   line-height:1.7;
-  margin:18px 0;
-  opacity:0.95;
+  margin:20px 0;
+  opacity:.95;
 }
 
 .btn{
   display:block;
-  margin:10px 0;
+  margin:12px 0;
   padding:12px;
   background:#00c6ff;
   color:#000;
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
+  transition:0.3s;
 }
 
 .btn:hover{
@@ -105,14 +88,6 @@ h1{
 
 <body>
 
-<!-- TAP SCREEN -->
-<div id="tapScreen">
-  <div>
-    <h2>👆 Tap sekali</h2>
-    <p>Untuk masuk & memulai musik</p>
-  </div>
-</div>
-
 <div class="container">
   <div class="card">
 
@@ -124,63 +99,17 @@ h1{
     <div class="sub">Hanya Gabut</div>
 
     <div class="about">
-      Nama saya Faisal Rizky.
-      Saya bukan siapa-siapa, hanya orang biasa yang sedang menjalani hidup
-      dengan cara saya sendiri.
-
-      <br><br>
-      Hidup tidak selalu tentang keberhasilan dan pencapaian.
-      Kadang hanya tentang bertahan, bangun pagi,
-      menenangkan pikiran, lalu mencoba lagi.
-      Ada hari di mana semuanya terasa berat,
-      ada juga hari di mana senyuman kecil sudah cukup.
+      Nama saya Faisal Rizky. Saya hanyalah orang biasa yang menjalani hidup apa adanya.
+      Hidup tidak selalu tentang pencapaian besar, kadang hanya tentang bertahan,
+      bangun pagi, menenangkan pikiran, lalu mencoba lagi.
+      Ada hari di mana semuanya terasa berat, ada juga hari di mana senyuman kecil sudah cukup.
 
       <br><br>
       Website ini saya buat sebagai ruang sederhana,
-      tempat saya meninggalkan jejak kecil perjalanan hidup.
-      Tidak untuk pamer, tidak juga untuk terlihat hebat,
-      hanya sebagai pengingat bahwa setiap orang
-      punya cerita dan prosesnya masing-masing.
+      tempat saya meninggalkan jejak perjalanan hidup,
+      berbagi cerita, dan sebagai pengingat bahwa setiap orang
+      punya prosesnya masing-masing.
 
       <br><br>
-      Jika kamu membaca sampai sejauh ini,
-      terima kasih sudah meluangkan waktu.
-      Dan jika suatu hari kamu berkenan mendukung,
-      sekadar traktir kopi pun sudah sangat berarti.
-    </div>
-
-    <a class="btn" href="https://instagram.com/juragan_empang_88" target="_blank">
-      Instagram
-    </a>
-
-    <a class="btn" href="https://wa.me/6288297054465" target="_blank">
-      WhatsApp
-    </a>
-
-    <a class="btn" href="https://saweria.co/faisalngopi" target="_blank">
-      Donasi via Saweria
-    </a>
-
-    <div class="note">
-      Dukungan kecilmu sangat berarti untuk perjalanan sederhana ini ☕
-    </div>
-
-  </div>
-</div>
-
-<audio id="musik" loop>
-  <source src="musik.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const tapScreen = document.getElementById("tapScreen");
-const musik = document.getElementById("musik");
-
-tapScreen.addEventListener("click", function(){
-  musik.play();
-  tapScreen.style.display = "none";
-});
-</script>
-
-</body>
-</html>
+      Jika kamu membaca sampai sejauh ini, terima kasih.
+      Dan jika berkenan mendukung, sekadar trakt
