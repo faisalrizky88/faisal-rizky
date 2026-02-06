@@ -6,93 +6,114 @@
 <title>Faisal Rizky</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
+body{
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
 }
 
-.overlay {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+/* layar tap */
+#tapScreen{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:9999;
+  cursor:pointer;
 }
 
-.card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 0 35px rgba(0,0,0,.4);
+#tapScreen h2{
+  margin-bottom:10px;
 }
 
-.profile img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  object-fit: cover;
+.container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 }
 
-h1 {
-  margin: 15px 0 5px;
-  font-size: 24px;
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(8px);
+  border-radius:22px;
+  padding:25px;
+  max-width:420px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 0 35px rgba(0,0,0,0.45);
 }
 
-.subtitle {
-  font-size: 14px;
-  opacity: 0.8;
+.profile img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:3px solid #fff;
+  object-fit:cover;
 }
 
-.about {
-  margin-top: 20px;
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.9;
+h1{
+  margin:15px 0 5px;
 }
 
-.btn {
-  display: block;
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #000;
-  background: #00c6ff;
+.sub{
+  font-size:14px;
+  opacity:0.85;
 }
 
-.btn:hover {
-  opacity: 0.85;
+.about{
+  text-align:left;
+  font-size:14px;
+  line-height:1.7;
+  margin:18px 0;
+  opacity:0.95;
 }
 
-.donate {
-  margin-top: 15px;
-  font-size: 13px;
-  opacity: 0.85;
+.btn{
+  display:block;
+  margin:10px 0;
+  padding:12px;
+  background:#00c6ff;
+  color:#000;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.tap {
-  margin-top: 15px;
-  font-size: 12px;
-  opacity: 0.7;
+.btn:hover{
+  opacity:0.85;
+}
+
+.note{
+  font-size:13px;
+  opacity:0.8;
+  margin-top:12px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay" id="tapArea">
+<!-- TAP SCREEN -->
+<div id="tapScreen">
+  <div>
+    <h2>👆 Tap sekali</h2>
+    <p>Untuk masuk & memulai musik</p>
+  </div>
+</div>
+
+<div class="container">
   <div class="card">
 
     <div class="profile">
@@ -100,13 +121,32 @@ h1 {
     </div>
 
     <h1>Faisal Rizky</h1>
-    <div class="subtitle">Hanya Gabut ✨</div>
+    <div class="sub">Hanya Gabut</div>
 
     <div class="about">
-      Saya hanyalah orang biasa yang menjalani hidup dengan sederhana.
-      Kadang capek, kadang senyum, kadang cuma bisa ngopi sambil mikir masa depan.
-      Website ini cuma tempat kecil buat ninggalin jejak,
-      siapa tau suatu hari bisa jadi cerita.
+      Nama saya Faisal Rizky.
+      Saya bukan siapa-siapa, hanya orang biasa yang sedang menjalani hidup
+      dengan cara saya sendiri.
+
+      <br><br>
+      Hidup tidak selalu tentang keberhasilan dan pencapaian.
+      Kadang hanya tentang bertahan, bangun pagi,
+      menenangkan pikiran, lalu mencoba lagi.
+      Ada hari di mana semuanya terasa berat,
+      ada juga hari di mana senyuman kecil sudah cukup.
+
+      <br><br>
+      Website ini saya buat sebagai ruang sederhana,
+      tempat saya meninggalkan jejak kecil perjalanan hidup.
+      Tidak untuk pamer, tidak juga untuk terlihat hebat,
+      hanya sebagai pengingat bahwa setiap orang
+      punya cerita dan prosesnya masing-masing.
+
+      <br><br>
+      Jika kamu membaca sampai sejauh ini,
+      terima kasih sudah meluangkan waktu.
+      Dan jika suatu hari kamu berkenan mendukung,
+      sekadar traktir kopi pun sudah sangat berarti.
     </div>
 
     <a class="btn" href="https://instagram.com/juragan_empang_88" target="_blank">
@@ -121,13 +161,8 @@ h1 {
       Donasi via Saweria
     </a>
 
-    <div class="donate">
-      Jika berkenan mendukung atau sekadar traktir kopi,
-      bisa langsung melalui Saweria 🙏
-    </div>
-
-    <div class="tap">
-      👆 Tap di mana saja untuk memulai musik
+    <div class="note">
+      Dukungan kecilmu sangat berarti untuk perjalanan sederhana ini ☕
     </div>
 
   </div>
@@ -138,9 +173,12 @@ h1 {
 </audio>
 
 <script>
-const audio = document.getElementById("musik");
-document.getElementById("tapArea").addEventListener("click", function () {
-  audio.play().catch(() => {});
+const tapScreen = document.getElementById("tapScreen");
+const musik = document.getElementById("musik");
+
+tapScreen.addEventListener("click", function(){
+  musik.play();
+  tapScreen.style.display = "none";
 });
 </script>
 
