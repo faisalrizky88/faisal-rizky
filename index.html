@@ -112,4 +112,33 @@ h1{
 
       <br><br>
       Jika kamu membaca sampai sejauh ini, terima kasih.
-      Dan jika berkenan mendukung, sekadar trakt
+      Dan jika berkenan mendukung, sekadar traktir kopi pun sudah sangat berarti.
+    </div>
+
+    <a class="btn" href="https://instagram.com/juragan_empang_88" target="_blank">Instagram</a>
+    <a class="btn" href="https://wa.me/6288297054465" target="_blank">WhatsApp</a>
+    <a class="btn" href="https://saweria.co/faisalngopi" target="_blank">Donasi via Saweria</a>
+
+    <div class="note">
+      Dukungan kecilmu sangat berarti ☕
+    </div>
+
+  </div>
+</div>
+
+<audio id="musik" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Musik nyala otomatis setelah 1 interaksi alami tanpa overlay
+const musik = document.getElementById("musik");
+document.addEventListener("click", function() {
+  if (musik.paused) {
+    musik.play().catch(()=>{});
+  }
+}, { once: true });
+</script>
+
+</body>
+</html>
