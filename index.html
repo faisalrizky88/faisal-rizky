@@ -2,99 +2,215 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Faisal Rizky</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faisal Rizky</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
-      line-height: 1.6;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      color: #eee;
     }
+
     .container {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-      padding: 24px;
+      padding: 40px 20px;
+      animation: fadeIn 1.2s ease;
     }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00ffd5;
+      box-shadow: 0 0 20px rgba(0,255,213,0.5);
+    }
+
     h1 {
-      margin-top: 0;
+      margin: 15px 0 5px;
       font-size: 32px;
     }
-    h2 {
-      margin-top: 32px;
-      font-size: 22px;
-    }
+
     .tagline {
+      font-size: 14px;
       color: #aaa;
-      margin-bottom: 24px;
     }
-    a {
-      color: #00ffd5;
-      text-decoration: none;
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #00ffd5, transparent);
+      margin: 35px 0;
     }
-    .btn {
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .support {
+      text-align: center;
+    }
+
+    .btn-saweria {
       display: inline-block;
-      margin-top: 16px;
-      padding: 12px 18px;
+      margin-top: 15px;
+      padding: 12px 22px;
       background: #00ffd5;
       color: #000;
-      border-radius: 8px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 18px rgba(0,255,213,0.6);
+      transition: 0.2s;
+    }
+
+    .btn-saweria:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0,255,213,0.9);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #00ffd5;
+      text-decoration: none;
       font-weight: bold;
     }
-    .footer {
-      margin-top: 48px;
-      font-size: 13px;
-      color: #777;
-      text-align: center;
+
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00ffd5;
+      color: #000;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,255,213,0.6);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
-    <h1>Faisal Rizky</h1>
-    <div class="tagline">Hanya gabut</div>
 
-    <h2>Tentang Saya</h2>
-    <p>
-      Halo, saya Faisal Rizky. Saya orang biasa yang menjalani hidup dengan cara sederhana.
-      Nggak selalu punya rencana besar, tapi selalu berusaha jalanin hari dengan tenang dan apa adanya.
-    </p>
-    <p>
-      Keseharian saya diisi dengan hal-hal kecil—ngopi, mikir, kerja seadanya, dan menikmati waktu luang.
-      Hidup buat saya bukan soal siapa yang paling cepat atau paling sukses,
-      tapi siapa yang bisa tetap waras dan bersyukur di setiap prosesnya.
-    </p>
-    <p>
-      Website ini saya buat sebagai ruang pribadi. Tempat berbagi, menaruh jejak,
-      dan mungkin sekadar jadi pengingat kalau hidup nggak harus selalu serius.
-      Kadang gabut itu perlu.
-    </p>
-
-    <h2>Support</h2>
-    <p>
-      Kalau kamu merasa terhibur atau ingin memberi dukungan,
-      kamu bisa support saya lewat Saweria.
-      Nggak ada kewajiban sama sekali — sekecil apa pun sangat berarti 🙏
-    </p>
-    <a class="btn" href="https://saweria.co/faisalngopi" target="_blank">
-      ☕ Support via Saweria
-    </a>
-
-    <h2>Kontak</h2>
-    <p>
-      Instagram:
-      <a href="https://instagram.com/juragan_empang_88" target="_blank">
-        @juragan_empang_88
-      </a>
-    </p>
-    <p>WhatsApp: +6288297054465</p>
-
-    <div class="footer">
-      © 2026 Faisal Rizky
+    <!-- PROFIL -->
+    <div class="profile">
+      <img src="foto-saya.jpg" alt="Faisal Rizky">
+      <h1>Faisal Rizky</h1>
+      <p class="tagline">Hanya gabut</p>
     </div>
+
+    <div class="divider"></div>
+
+    <!-- TENTANG SAYA -->
+    <section>
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo, saya Faisal Rizky. Saya orang biasa yang menjalani hidup dengan cara sederhana.
+        Nggak selalu punya rencana besar, tapi selalu berusaha jalanin hari dengan tenang dan apa adanya.
+      </p>
+
+      <p>
+        Keseharian saya diisi dengan hal-hal kecil — ngopi, mikir kerja seadanya,
+        dan menikmati waktu luang. Hidup buat saya bukan soal siapa yang paling cepat
+        atau paling sukses, tapi siapa yang bisa tetap waras dan bersyukur di setiap prosesnya.
+      </p>
+
+      <p>
+        Website ini saya buat sebagai ruang pribadi.
+        Tempat berbagi, menaruh jejak, dan sekadar pengingat
+        kalau hidup nggak harus selalu serius.
+        Kadang gabut itu perlu.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SUPPORT -->
+    <section class="support">
+      <h2>Support</h2>
+      <p>
+        Kalau kamu merasa terhibur atau ingin memberi dukungan,
+        kamu bisa support saya lewat Saweria.
+        Nggak ada kewajiban sama sekali —
+        sekecil apa pun sangat berarti 🙏
+      </p>
+
+      <a class="btn-saweria" href="https://saweria.co/faisalngopi" target="_blank">
+        ☕ Support via Saweria
+      </a>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SOSIAL -->
+    <footer>
+      <a href="https://instagram.com/juragan_empang_88" target="_blank">
+        📷 Instagram
+      </a>
+    </footer>
+
   </div>
+
+  <!-- MUSIK (OPSIONAL) -->
+  <audio id="bg-music" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        music.play();
+        isPlaying = true;
+        document.querySelector(".music-btn").innerText = "⏸️ Pause Musik";
+      } else {
+        music.pause();
+        isPlaying = false;
+        document.querySelector(".music-btn").innerText = "🎵 Putar Musik";
+      }
+    }
+  </script>
 
 </body>
 </html>
