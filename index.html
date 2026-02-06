@@ -5,32 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faisal Rizky</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
 body{
-background:#000;
-color:#eee;
+  background:linear-gradient(180deg,#0f2027,#000);
+  color:#eee;
 }
+
 .container{
-max-width:720px;
-margin:auto;
-padding:40px 20px;
-text-align:center;
+  max-width:720px;
+  margin:auto;
+  padding:40px 20px;
 }
-h1{font-size:2.2rem}
-p{margin:15px 0;color:#aaa}
-a{
-display:block;
-margin:12px auto;
-max-width:300px;
-padding:12px;
-background:#4dd0a6;
-color:#000;
-text-decoration:none;
-border-radius:8px;
-font-weight:600;
+
+header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+header h1{
+  font-size:2.4rem;
+}
+
+header p{
+  color:#aaa;
+  margin-top:6px;
+}
+
+section{
+  margin-bottom:40px;
+}
+
+h2{
+  color:#4dd0a6;
+  margin-bottom:12px;
+}
+
+p{
+  line-height:1.8;
+  margin-bottom:12px;
+}
+
+.links a{
+  display:block;
+  margin-bottom:12px;
+  padding:12px;
+  text-align:center;
+  background:#4dd0a6;
+  color:#000;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  color:#777;
+  font-size:.9rem;
+  margin-top:60px;
 }
 </style>
 </head>
@@ -38,17 +78,47 @@ font-weight:600;
 <body>
 
 <div class="container">
+
+<header>
   <h1>Faisal Rizky</h1>
   <p>Hanya gabut</p>
+</header>
 
+<section>
+  <h2>Tentang Saya</h2>
   <p>
-    Ini website pribadi sederhana.
-    Terima kasih sudah mampir 🙏
+    Halo, saya Faisal Rizky. Saya menjalani hidup dengan cara sederhana,
+    menikmati proses, dan tidak terlalu memaksa arah hidup.
   </p>
+  <p>
+    Website ini adalah ruang pribadi saya. Tempat singgah dan berbagi,
+    tanpa banyak basa-basi.
+  </p>
+</section>
 
-  <a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
-  <a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
-  <a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi Saweria</a>
+<section>
+  <h2>Kontak & Sosial</h2>
+  <div class="links">
+    <a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
+    <a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
+  </div>
+</section>
+
+<section>
+  <h2>Dukungan</h2>
+  <p>
+    Kalau berkenan memberi dukungan atau sekadar traktir kopi,
+    bisa langsung lewat Saweria 🙏
+  </p>
+  <div class="links">
+    <a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Faisal Rizky
+</footer>
+
 </div>
 
 <!-- MUSIK -->
@@ -57,9 +127,12 @@ font-weight:600;
 </audio>
 
 <script>
-document.addEventListener("click", function () {
-  document.getElementById("bgm").play();
-}, { once: true });
+document.addEventListener("click", function(){
+  const musik = document.getElementById("bgm");
+  if(musik.paused){
+    musik.play();
+  }
+}, { once:true });
 </script>
 
 </body>
