@@ -5,55 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faisal Rizky</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 body{
-background:linear-gradient(180deg,#0f2027,#000);
+background:#000;
 color:#eee;
 }
 .container{
 max-width:720px;
 margin:auto;
 padding:40px 20px;
-animation:fade 1s ease;
+text-align:center;
 }
-header{text-align:center;margin-bottom:40px}
-header h1{font-size:2.3rem}
-header p{color:#aaa;margin-top:6px}
-section{margin-bottom:40px}
-h2{color:#4dd0a6;margin-bottom:14px}
-p{margin-bottom:12px}
-.links a{
+h1{font-size:2.2rem}
+p{margin:15px 0;color:#aaa}
+a{
 display:block;
+margin:12px auto;
+max-width:300px;
+padding:12px;
 background:#4dd0a6;
 color:#000;
 text-decoration:none;
-padding:12px;
 border-radius:8px;
-margin-bottom:10px;
-text-align:center;
-font-weight:500;
-}
-.links a:hover{background:#3cbf96}
-footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
-
-#musicBtn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#4dd0a6;
-border:none;
-border-radius:25px;
-padding:10px 16px;
 font-weight:600;
-cursor:pointer;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -61,71 +38,28 @@ to{opacity:1;transform:translateY(0)}
 <body>
 
 <div class="container">
+  <h1>Faisal Rizky</h1>
+  <p>Hanya gabut</p>
 
-<header>
-<h1>Faisal Rizky</h1>
-<p>Hanya gabut</p>
-</header>
+  <p>
+    Ini website pribadi sederhana.
+    Terima kasih sudah mampir 🙏
+  </p>
 
-<section>
-<h2>Tentang Saya</h2>
-<p>
-Halo, saya Faisal Rizky. Saya menjalani hidup dengan cara sederhana.
-Tidak selalu punya rencana besar, tapi selalu berusaha tetap jalan dan bersyukur.
-</p>
-<p>
-Website ini adalah ruang pribadi saya. Tempat singgah, berbagi,
-dan sekadar pengingat bahwa hidup tidak harus selalu serius.
-</p>
-</section>
-
-<section>
-<h2>Kontak & Sosial</h2>
-<div class="links">
-<a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
-<a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
-</div>
-</section>
-
-<section>
-<h2>Dukungan</h2>
-<p>
-Jika kamu ingin memberi dukungan atau sekadar traktir kopi,
-kamu bisa langsung lewat Saweria. Terima kasih 🙏
-</p>
-<div class="links">
-<a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi via Saweria</a>
-</div>
-</section>
-
-<footer>
-© 2026 Faisal Rizky
-</footer>
-
+  <a href="https://wa.me/6288297054465" target="_blank">📱 WhatsApp</a>
+  <a href="https://instagram.com/juragan_empang_88" target="_blank">📷 Instagram</a>
+  <a href="https://saweria.co/faisalngopi" target="_blank">☕ Donasi Saweria</a>
 </div>
 
 <!-- MUSIK -->
 <audio id="bgm" loop>
-<source src="musik.mp3" type="audio/mpeg">
+  <source src="musik.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn" onclick="toggleMusic()">▶ Musik</button>
-
 <script>
-const musik=document.getElementById("bgm");
-function toggleMusic(){
-if(musik.paused){
-musik.play();
-musicBtn.innerText="⏸ Musik";
-}else{
-musik.pause();
-musicBtn.innerText="▶ Musik";
-}
-}
-document.addEventListener("click",function(){
-musik.play();
-musicBtn.innerText="⏸ Musik";
-},{once:true});
+document.addEventListener("click", function () {
+  document.getElementById("bgm").play();
+}, { once: true });
 </script>
 
 </body>
