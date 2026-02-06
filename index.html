@@ -6,29 +6,27 @@
 <title>Faisal Rizky</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+* { box-sizing:border-box; margin:0; padding:0; }
 
-body{
-  margin:0;
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;
+  color:white;
+  min-height:100vh;
 }
 
-.container{
-  min-height:100vh;
+.container {
   display:flex;
   justify-content:center;
   align-items:center;
+  min-height:100vh;
   padding:20px;
 }
 
-.card{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(8px);
-  border-radius:22px;
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 22px;
   padding:30px 25px;
   max-width:500px;
   width:100%;
@@ -36,7 +34,7 @@ body{
   box-shadow:0 0 35px rgba(0,0,0,0.45);
 }
 
-.profile img{
+.profile img {
   width:130px;
   height:130px;
   border-radius:50%;
@@ -44,17 +42,10 @@ body{
   object-fit:cover;
 }
 
-h1{
-  margin:15px 0 5px;
-  font-size:28px;
-}
+h1 { margin:15px 0 5px; font-size:28px; }
+.sub { font-size:15px; opacity:0.85; }
 
-.sub{
-  font-size:15px;
-  opacity:0.85;
-}
-
-.about{
+.about {
   text-align:left;
   font-size:15px;
   line-height:1.7;
@@ -62,7 +53,7 @@ h1{
   opacity:.95;
 }
 
-.btn{
+.btn {
   display:block;
   margin:12px 0;
   padding:12px;
@@ -74,19 +65,41 @@ h1{
   transition:0.3s;
 }
 
-.btn:hover{
-  opacity:0.85;
-}
+.btn:hover { opacity:0.85; }
 
-.note{
+.note {
   font-size:13px;
   opacity:0.8;
   margin-top:12px;
 }
+
+/* Tombol musik kecil */
+#musicBtn {
+  position: fixed;
+  top:20px;
+  right:20px;
+  background: rgba(0,198,255,0.9);
+  border:none;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  font-size:20px;
+  cursor:pointer;
+  color:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  z-index:1000;
+}
+#musicBtn:hover { opacity:0.85; }
 </style>
 </head>
 
 <body>
+
+<!-- Tombol Musik -->
+<button id="musicBtn">▶️</button>
 
 <div class="container">
   <div class="card">
@@ -131,14 +144,22 @@ h1{
 </audio>
 
 <script>
-// Musik nyala otomatis setelah 1 interaksi alami tanpa overlay
-const musik = document.getElementById("musik");
-document.addEventListener("click", function() {
-  if (musik.paused) {
-    musik.play().catch(()=>{});
+const audio = document.getElementById("musik");
+const musicBtn = document.getElementById("musicBtn");
+let isPlaying = false;
+
+musicBtn.addEventListener("click", function() {
+  if(isPlaying){
+    audio.pause();
+    musicBtn.textContent = "▶️";
+    isPlaying = false;
+  } else {
+    audio.play().catch(()=>{});
+    musicBtn.textContent = "⏸️";
+    isPlaying = true;
   }
-}, { once: true });
+});
 </script>
 
 </body>
-</html>
+      </html>
