@@ -112,6 +112,28 @@ transition:0.3s;
 @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Scroll to top button */
+#topBtn{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  display:none;
+  background:#4dd0a6;
+  color:#000;
+  border:none;
+  padding:12px 16px;
+  border-radius:25px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  z-index:1000;
+  transition:0.3s;
+}
+#topBtn:hover{
+  background:#3cbf96;
+  transform:scale(1.05);
+}
 </style>
 </head>
 
@@ -172,10 +194,12 @@ Terima kasih sudah mampir 🙏
 </audio>
 
 <button id="musicBtn" onclick="toggleMusic()">▶ Musik</button>
+<button id="topBtn" onclick="scrollTop()">⬆ Top</button>
 
 <script>
 const audio = document.getElementById("bgm");
 const btn = document.getElementById("musicBtn");
+const topBtn = document.getElementById("topBtn");
 let isPlaying = false;
 
 function toggleMusic(){
@@ -201,7 +225,21 @@ document.addEventListener("click", function(){
     isPlaying=true;
   }
 }, { once:true });
+
+// Scroll to Top
+function scrollTop(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Tampilkan tombol scroll-to-top jika scroll > 200px
+window.onscroll = function(){
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    topBtn.style.display="block";
+  } else {
+    topBtn.style.display="none";
+  }
+}
 </script>
 
 </body>
-  </html>
+</html>
