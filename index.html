@@ -56,30 +56,6 @@ section{margin-bottom:40px;animation:fadeUp 1s ease;}
 h2{color:#4dd0a6;margin-bottom:14px}
 p{margin-bottom:12px;line-height:1.8}
 
-.links a{
-display:flex;
-align-items:center;
-background:#4dd0a6;
-color:#000;
-text-decoration:none;
-padding:12px;
-border-radius:8px;
-margin-bottom:10px;
-font-weight:500;
-transition:0.3s;
-}
-.links a i{
-  margin-right:8px;
-  font-size:1.2rem;
-}
-.links a:hover{
-  background:#3cbf96;
-  box-shadow:0 0 10px #4dd0a6;
-  transform:scale(1.05);
-}
-
-footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
-
 /* Tombol musik */
 #musicBtn{
 position:fixed;
@@ -107,6 +83,61 @@ transition:0.3s;
   50%{transform:scale(1.1);}
   100%{transform:scale(1);}
 }
+
+/* Links section */
+.links a{
+display:flex;
+align-items:center;
+background:#4dd0a6;
+color:#000;
+text-decoration:none;
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
+font-weight:500;
+transition:0.3s;
+}
+.links a i{
+  margin-right:8px;
+  font-size:1.2rem;
+}
+.links a:hover{
+  background:#3cbf96;
+  box-shadow:0 0 10px #4dd0a6;
+  transform:scale(1.05);
+}
+
+/* Tombol sosial melayang */
+.float-links{
+  position:fixed;
+  top:50%;
+  right:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transform:translateY(-50%);
+  z-index:1000;
+}
+.float-links a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:50px;
+  height:50px;
+  background:#4dd0a6;
+  color:#000;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:1.5rem;
+  transition:0.3s;
+}
+.float-links a:hover{
+  background:#3cbf96;
+  transform:scale(1.2);
+  box-shadow:0 0 10px #4dd0a6;
+}
+
+footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 
 /* Fade animasi teks */
 @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -143,21 +174,12 @@ Website ini juga sebagai pengingat bahwa setiap orang punya prosesnya masing-mas
 </section>
 
 <section>
-<h2>Kontak & Sosial</h2>
+<h2>Dukungan & Kontak</h2>
 <div class="links">
 <a href="https://wa.me/6288297054465" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
 <a href="https://instagram.com/juragan_empang_88" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
 <a href="https://saweria.co/faisalngopi" target="_blank"><i class="fa-solid fa-mug-hot"></i>Donasi via Saweria</a>
 </div>
-</section>
-
-<section>
-<h2>Dukungan</h2>
-<p>
-Jika kamu ingin memberi dukungan atau sekadar traktir kopi,
-kamu bisa langsung lewat Saweria.
-Terima kasih sudah mampir 🙏
-</p>
 </section>
 
 <footer>
@@ -172,6 +194,13 @@ Terima kasih sudah mampir 🙏
 </audio>
 
 <button id="musicBtn" onclick="toggleMusic()">▶ Musik</button>
+
+<!-- Tombol sosial melayang -->
+<div class="float-links">
+<a href="https://wa.me/6288297054465" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="https://instagram.com/juragan_empang_88" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://saweria.co/faisalngopi" target="_blank"><i class="fa-solid fa-mug-hot"></i></a>
+</div>
 
 <script>
 const audio = document.getElementById("bgm");
