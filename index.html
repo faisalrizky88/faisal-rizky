@@ -126,6 +126,78 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* ===== SLIDER TAMBAHAN ===== */
+.image-slider{
+  position:relative;
+  width:100%;
+  margin:40px auto 60px;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.slider-track{
+  display:flex;
+  transition:transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+.slide{
+  min-width:100%;
+}
+
+.slide img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+
+/* Tombol */
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  border:none;
+  color:white;
+  font-size:18px;
+  padding:8px 12px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.slide-btn:hover{
+  background:#4dd0a6;
+  color:black;
+}
+
+.prev{left:15px;}
+.next{right:15px;}
+
+/* Dot */
+.slider-dots{
+  position:absolute;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+}
+
+.slider-dot{
+  width:10px;
+  height:10px;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.slider-dot.active{
+  width:25px;
+  border-radius:20px;
+  background:#4dd0a6;
+  }
 </style>
 </head>
 
@@ -138,7 +210,19 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 <h1>Faisal Rizky</h1>
 <p>Hanya gabut</p>
 </header>
+<!-- SLIDER FOTO -->
+<div class="image-slider">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide"><img src="foto1.jpg" alt=""></div>
+    <div class="slide"><img src="foto2.jpg" alt=""></div>
+    <div class="slide"><img src="foto3.jpg" alt=""></div>
+  </div>
 
+  <button class="slide-btn prev" onclick="moveSlide(-1)">❮</button>
+  <button class="slide-btn next" onclick="moveSlide(1)">❯</button>
+
+  <div class="slider-dots" id="sliderDots"></div>
+</div>
 <section>
 <h2>Tentang Saya</h2>
 <p>
@@ -221,6 +305,54 @@ document.addEventListener("click", function(){
     isPlaying=true;
   }
 }, { once:true });
+<script>
+const track = document.getElementById("sliderTrack");
+const slides = document.querySelectorAll(".image-slider .slide");
+const dotsContainer = document.getElementById("sliderDots");
+let index = 0;
+
+/* Buat dots otomatis */
+slides.forEach((_, i)=>{
+  const dot = document.createElement("div");
+  dot.classList.add("slider-dot");
+  if(i === 0) dot.classList.add("active");
+  dot.addEventListener("click", ()=>{
+    index = i;
+    updateSlide();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".slider-dot");
+
+function updateSlide(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot=>dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function moveSlide(step){
+  index += step;
+  if(index >= slides.length) index = 0;
+  if(index < 0) index = slides.length - 1;
+  updateSlide();
+}
+
+/* Auto slide */
+setInterval(()=>{
+  moveSlide(1);
+},5000);
+
+/* Swipe HP */
+let startX = 0;
+track.addEventListener("touchstart",e=>{
+  startX = e.touches[0].clientX;
+});
+track.addEventListener("touchend",e=>{
+  let endX = e.changedTouches[0].clientX;
+  if(startX - endX > 50) moveSlide(1);
+  if(endX - startX > 50) moveSlide(-1);
+});
 </script>
 
 </body>
