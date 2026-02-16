@@ -14,7 +14,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
-/* Background Gradient Animasi */
 body{
   min-height:100vh;
   background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
@@ -34,13 +33,11 @@ body{
   max-width:800px;
   margin:auto;
   padding:40px 20px;
-  animation:fade 1s ease;
 }
 header{text-align:center;margin-bottom:50px}
-header h1{font-size:2.5rem;animation:fadeDown 1s ease;}
-header p{color:#aaa;margin-top:6px;animation:fadeDown 1.2s ease;}
+header h1{font-size:2.5rem;}
+header p{color:#aaa;margin-top:6px;}
 
-/* Foto profil */
 .profile-pic{
   width:180px;
   height:180px;
@@ -50,18 +47,12 @@ header p{color:#aaa;margin-top:6px;animation:fadeDown 1.2s ease;}
   display:block;
   margin-bottom:20px;
   box-shadow:0 0 20px rgba(0,0,0,0.5);
-  animation:fadeDown 1.5s ease;
 }
 
-/* Section panjang */
-section{
-  margin-bottom:60px;
-  animation:fadeUp 1s ease;
-}
+section{margin-bottom:60px;}
 h2{color:#4dd0a6;margin-bottom:14px;font-size:1.8rem;}
 p{margin-bottom:16px;line-height:1.8;font-size:1.1rem;}
 
-/* Tombol musik */
 #musicBtn{
 position:fixed;
 bottom:20px;
@@ -79,17 +70,7 @@ box-shadow:0 0 10px rgba(0,0,0,0.5);
 z-index:1000;
 transition:0.3s;
 }
-#musicBtn.active{
-  animation: pulse 1s infinite;
-}
 
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
-}
-
-/* Tombol sosial melayang */
 .float-links{
   position:fixed;
   top:50%;
@@ -119,14 +100,10 @@ transition:0.3s;
   box-shadow:0 0 12px #4dd0a6;
 }
 
-/* Footer */
 footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 
-/* Fade animasi teks */
-@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-/* ===== SLIDER TAMBAHAN ===== */
+/* ===== SLIDER ===== */
+
 .image-slider{
   position:relative;
   width:100%;
@@ -138,7 +115,7 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
 
 .slider-track{
   display:flex;
-  transition:transform 0.8s cubic-bezier(.77,0,.18,1);
+  transition:transform 0.6s ease;
 }
 
 .slide{
@@ -151,7 +128,6 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
   object-fit:cover;
 }
 
-/* Tombol */
 .slide-btn{
   position:absolute;
   top:50%;
@@ -163,18 +139,11 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
   padding:8px 12px;
   border-radius:50%;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.slide-btn:hover{
-  background:#4dd0a6;
-  color:black;
 }
 
 .prev{left:15px;}
 .next{right:15px;}
 
-/* Dot */
 .slider-dots{
   position:absolute;
   bottom:15px;
@@ -190,82 +159,16 @@ footer{text-align:center;color:#777;font-size:.9rem;margin-top:50px}
   background:rgba(255,255,255,0.6);
   border-radius:50%;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .slider-dot.active{
   width:25px;
   border-radius:20px;
   background:#4dd0a6;
-  }
-  .image-slider{
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  margin: 40px 0;
 }
-
-.slider-track{
-  display: flex;
-  transition: transform 0.6s ease;
-}
-
-.slide{
-  min-width: 100%;
-}
-
-.slide img{
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.slide-btn{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.slide-btn:hover{
-  background: rgba(255,255,255,0.3);
-}
-
-.prev{ left: 10px; }
-.next{ right: 10px; }
 </style>
 </head>
-<script>
-let currentIndex = 0;
-const track = document.getElementById("sliderTrack");
-const slides = document.querySelectorAll(".slide");
-const totalSlides = slides.length;
 
-function updateSlider(){
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-function moveSlide(direction){
-  currentIndex += direction;
-
-  if(currentIndex >= totalSlides){
-    currentIndex = 0;
-  }
-
-  if(currentIndex < 0){
-    currentIndex = totalSlides - 1;
-  }
-
-  updateSlider();
-}
-</script>
 <body>
 
 <div class="container">
@@ -275,7 +178,7 @@ function moveSlide(direction){
 <h1>Faisal Rizky</h1>
 <p>Hanya gabut</p>
 </header>
-<!-- SLIDER FOTO -->
+
 <div class="image-slider">
   <div class="slider-track" id="sliderTrack">
     <div class="slide"><img src="foto1.jpg" alt=""></div>
@@ -290,6 +193,7 @@ function moveSlide(direction){
 
   <div class="slider-dots" id="sliderDots"></div>
 </div>
+
 <section>
 <h2>Tentang Saya</h2>
 <p>
@@ -330,14 +234,12 @@ Dan akhirnya, jika kamu membaca ini dan ingin memberi dukungan atau sekadar ngob
 
 </div>
 
-<!-- MUSIK -->
 <audio id="bgm" loop>
 <source src="musik.mp3" type="audio/mpeg">
 </audio>
 
 <button id="musicBtn" onclick="toggleMusic()">▶ Musik</button>
 
-<!-- Tombol sosial melayang -->
 <div class="float-links">
 <a href="https://wa.me/6288297054465" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 <a href="https://instagram.com/juragan_empang_88" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -345,40 +247,11 @@ Dan akhirnya, jika kamu membaca ini dan ingin memberi dukungan atau sekadar ngob
 </div>
 
 <script>
-const audio = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
-let isPlaying = false;
-
-function toggleMusic(){
-  if(isPlaying){
-    audio.pause();
-    btn.innerText="▶ Musik";
-    btn.classList.remove("active");
-    isPlaying=false;
-  } else {
-    audio.play().catch(()=>{});
-    btn.innerText="⏸ Musik";
-    btn.classList.add("active");
-    isPlaying=true;
-  }
-}
-
-// Mainkan musik setelah 1 klik user di halaman
-document.addEventListener("click", function(){
-  if(!isPlaying){
-    audio.play().catch(()=>{});
-    btn.innerText="⏸ Musik";
-    btn.classList.add("active");
-    isPlaying=true;
-  }
-}, { once:true });
-<script>
 const track = document.getElementById("sliderTrack");
-const slides = document.querySelectorAll(".image-slider .slide");
+const slides = document.querySelectorAll(".slide");
 const dotsContainer = document.getElementById("sliderDots");
 let index = 0;
 
-/* Buat dots otomatis */
 slides.forEach((_, i)=>{
   const dot = document.createElement("div");
   dot.classList.add("slider-dot");
@@ -405,21 +278,24 @@ function moveSlide(step){
   updateSlide();
 }
 
-/* Auto slide */
-setInterval(()=>{
-  moveSlide(1);
-},5000);
+setInterval(()=>{ moveSlide(1); },5000);
 
-/* Swipe HP */
-let startX = 0;
-track.addEventListener("touchstart",e=>{
-  startX = e.touches[0].clientX;
-});
-track.addEventListener("touchend",e=>{
-  let endX = e.changedTouches[0].clientX;
-  if(startX - endX > 50) moveSlide(1);
-  if(endX - startX > 50) moveSlide(-1);
-});
+/* Musik */
+const audio = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
+let playing = false;
+
+function toggleMusic(){
+  if(playing){
+    audio.pause();
+    btn.innerText="▶ Musik";
+    playing=false;
+  } else {
+    audio.play().catch(()=>{});
+    btn.innerText="⏸ Musik";
+    playing=true;
+  }
+}
 </script>
 
 </body>
